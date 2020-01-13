@@ -50,12 +50,12 @@ logo.setAttribute("src", siteContent["nav"]["img-src"]);
 
 const navAnchors = document.querySelectorAll("a");
 
-navAnchors[0].textContent = "Services";
-navAnchors[1].textContent = "Product";
-navAnchors[2].textContent = "Vision";
-navAnchors[3].textContent = "Features";
-navAnchors[4].textContent = "About";
-navAnchors[5].textContent = "Contact";
+navAnchors[0].textContent = siteContent["nav"]["nav-item-1"];
+navAnchors[1].textContent = siteContent["nav"]["nav-item-2"];
+navAnchors[2].textContent = siteContent["nav"]["nav-item-3"];
+navAnchors[3].textContent = siteContent["nav"]["nav-item-4"];
+navAnchors[4].textContent = siteContent["nav"]["nav-item-5"];
+navAnchors[5].textContent = siteContent["nav"]["nav-item-6"];
 
 // ---------------CTA Div-----------------
 
@@ -103,3 +103,15 @@ middleParagraphs[3].textContent =
   "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
 middleParagraphs[4].textContent =
   "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+
+// ------------Contact---------------
+
+const contactParagraphs = document.querySelectorAll(".contact p");
+contactParagraphs[0].textContent = "123 Way 456 Street Somewhere, USA";
+contactParagraphs[1].textContent = "1 (888) 888-8888";
+contactParagraphs[2].textContent = "sales@greatidea.io";
+
+// -------------Footer---------------
+
+const footerParagraph = document.querySelector("footer p");
+footerParagraph.textContent = "Copyright Great Idea! 2018";
