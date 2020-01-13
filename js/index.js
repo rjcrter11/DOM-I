@@ -13,6 +13,9 @@ const siteContent = {
     button: "Get Started",
     "img-src": "img/header-img.png"
   },
+  button1: {
+    onClick: "Starting!"
+  },
   "main-content": {
     "features-h4": "Features",
     "features-content":
@@ -57,36 +60,64 @@ navAnchors[3].textContent = siteContent["nav"]["nav-item-4"];
 navAnchors[4].textContent = siteContent["nav"]["nav-item-5"];
 navAnchors[5].textContent = siteContent["nav"]["nav-item-6"];
 
+navAnchors.forEach((element) => {
+  element.style.color = "green";
+});
+const preNav = document.createElement("a");
+preNav.classList.add("nav-item-0");
+preNav.textContent = "Partners";
+preNav.style.color = "green";
+preNav.href = "#";
+
+const postNav = document.createElement("a");
+postNav.classList.add("nav-item-7");
+postNav.textContent = "Resources";
+postNav.style.color = "green";
+postNav.href = "#";
+
+const parentElement = document.querySelector("nav");
+parentElement.prepend(preNav);
+parentElement.append(postNav);
+
 // ---------------CTA Div-----------------
 
 const title = document.querySelector("h1");
-title.textContent = "DOM IS AWESOME";
+title.textContent = siteContent["cta"]["h1"];
 
-const ctaButton = document.querySelector("button");
-ctaButton.textContent = "Get Started";
+let ctaButton = document.querySelector("button");
+ctaButton.textContent = siteContent["cta"]["button"];
+
+ctaButton.addEventListener("mouseenter", (event) => {
+  ctaButton.style.color = "white";
+  ctaButton.style.backgroundColor = "dodgerBlue";
+});
+ctaButton.addEventListener("mouseleave", (event) => {
+  ctaButton.style.color = "black";
+  ctaButton.style.backgroundColor = "white";
+});
 
 // ---CTA Image---
 
 const ctaImg = document.querySelector("#cta-img");
-ctaImg.src = "img/header-img.png";
+ctaImg.src = siteContent["cta"]["img-src"];
 
 // ------------Main Content----------------
 
 // ---Middle Image---
 
-const middleImg = document.querySelector(".middle-img");
-middleImg.src = "img/mid-page-accent.jpg";
+const middleImg = document.querySelector("#middle-img");
+middleImg.src = siteContent["main-content"]["middle-img-src"];
 
 // ---Middle Content---
 
 //-Headers-
 const middleHeaders = document.querySelectorAll("h4");
-middleHeaders[0].textContent = "Features";
-middleHeaders[1].textContent = "About";
-middleHeaders[2].textContent = "Services";
-middleHeaders[3].textContent = "Product";
-middleHeaders[4].textContent = "Vision";
-middleHeaders[5].textContent = "Contact";
+middleHeaders[0].textContent = siteContent["main-content"]["features-h4"];
+middleHeaders[1].textContent = siteContent["main-content"]["about-h4"];
+middleHeaders[2].textContent = siteContent["main-content"]["services-h4"];
+middleHeaders[3].textContent = siteContent["main-content"]["product-h4"];
+middleHeaders[4].textContent = siteContent["main-content"]["vision-h4"];
+middleHeaders[5].textContent = siteContent["contact"]["contact-h4"];
 
 //-Paragraphs-
 const middleParagraphs = document.querySelectorAll(
@@ -94,24 +125,22 @@ const middleParagraphs = document.querySelectorAll(
 );
 
 middleParagraphs[0].textContent =
-  "Features content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-middleParagraphs[1].textContent =
-  "About content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+  siteContent["main-content"]["features-content"];
+middleParagraphs[1].textContent = siteContent["main-content"]["about-content"];
 middleParagraphs[2].textContent =
-  "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+  siteContent["main-content"]["services-content"];
 middleParagraphs[3].textContent =
-  "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
-middleParagraphs[4].textContent =
-  "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.";
+  siteContent["main-content"]["product-content"];
+middleParagraphs[4].textContent = siteContent["main-content"]["vision-content"];
 
 // ------------Contact---------------
 
 const contactParagraphs = document.querySelectorAll(".contact p");
-contactParagraphs[0].textContent = "123 Way 456 Street Somewhere, USA";
-contactParagraphs[1].textContent = "1 (888) 888-8888";
-contactParagraphs[2].textContent = "sales@greatidea.io";
+contactParagraphs[0].textContent = siteContent["contact"]["address"];
+contactParagraphs[1].textContent = siteContent["contact"]["phone"];
+contactParagraphs[2].textContent = siteContent["contact"]["email"];
 
 // -------------Footer---------------
 
 const footerParagraph = document.querySelector("footer p");
-footerParagraph.textContent = "Copyright Great Idea! 2018";
+footerParagraph.textContent = siteContent["footer"]["copyright"];
