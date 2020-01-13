@@ -13,9 +13,6 @@ const siteContent = {
     button: "Get Started",
     "img-src": "img/header-img.png"
   },
-  button1: {
-    onClick: "Starting!"
-  },
   "main-content": {
     "features-h4": "Features",
     "features-content":
@@ -144,3 +141,8 @@ contactParagraphs[2].textContent = siteContent["contact"]["email"];
 
 const footerParagraph = document.querySelector("footer p");
 footerParagraph.textContent = siteContent["footer"]["copyright"];
+
+const footer = document.querySelector("footer");
+footer.style.backgroundColor = "black";
+footerParagraph.style.color = "white";
+footerParagraph.style.padding = "15px";
